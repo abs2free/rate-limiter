@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// 计数器
 type Counter struct {
 	rate   int           // 计数周期内最多允许的请求数
 	begin  time.Time     // 计数开始时间
