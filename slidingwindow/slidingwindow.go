@@ -32,6 +32,7 @@ func (w winInfo) incr(now time.Time, slotDuration time.Duration) winInfo {
 	if len(w) > 0 {
 		lastSlot = w[len(w)-1]
 		if lastSlot.timestamp.Add(slotDuration).Before(now) {
+			// 没有当前的slot, 重置lastSlot
 			lastSlot = &timeSlot{timestamp: now, count: 1}
 			w = append(w, lastSlot)
 		} else {
