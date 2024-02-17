@@ -6,6 +6,7 @@ package cmd
 import (
 	"fmt"
 	"rate-limiter/counter"
+	"rate-limiter/slidingwindow"
 
 	"github.com/spf13/cobra"
 )
@@ -27,6 +28,8 @@ to quickly create a Cobra application.`,
 			counter.ExampleCounter()
 		case "counter-in-redis":
 			counter.ExampleCounterRedis()
+		case "sliding-window":
+			slidingwindow.ExampleSlidingWindow()
 		default:
 			fmt.Println("there is no case")
 		}
